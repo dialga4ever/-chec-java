@@ -2,7 +2,7 @@ package échec;
 
 public class Plateaux {
     private int taille;
-    
+
     /**
      * @return int return the taille
      */
