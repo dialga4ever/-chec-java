@@ -1,10 +1,9 @@
-package échec;
+package echec;
 
 public abstract class Piece {
     private Position position;
     private final Couleur couleur;
-    private final String nom;
-    private final char symbole;
+    private Plateaux plateau;
 
 
 
@@ -12,12 +11,14 @@ public abstract class Piece {
     public abstract char getSymbole();
     abstract boolean deplacementValide(Position position);
     
-    public Piece(Position position, Couleur couleur,String nom, char symbole) {
+    public Piece(Position position, Couleur couleur, Plateau p) {
         this.position = position;
         this.couleur = couleur;
-        this.nom = nom;
-        this.symbole = symbole;
+        this.plateau = p;
+
     }
+
+
     /**
      * @return Position return the position
      */
@@ -36,9 +37,16 @@ public abstract class Piece {
     }
     boolean deplace(Position position) {
         if (deplacementValide(position)) {
+            plateau.c[this.position.getColonne()][this.position.getligne()]=null;
             setPosition(position);
+            plateau.c[position.getColonne()][position.getligne()]=this;            
             return true;
         }
         return false;
+    }
+
+    @Override
+    public String toString() {
+        return symbole;
     }
 }

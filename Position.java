@@ -1,4 +1,4 @@
-package échec;
+package echec;
 
 
 public class Position {
@@ -6,7 +6,7 @@ public class Position {
     private int colonne;
 
     Position(int ligne, int colonne) {
-        if (ligne < 1 || colonne < 1|| ligne > 8 || colonne > 8) {
+        if (ligne < 0 || colonne < 0|| ligne > 7 || colonne > 7) {
             throw new IllegalArgumentException("ligne and colonne must be positive or lower than 8");
             
         }
@@ -25,7 +25,7 @@ public class Position {
     /**
      * @param ligne the ligne to set
      */
-    public void setX(int ligne) {
+    public void setLigne(int ligne) {
         this.ligne = ligne;
     }
 
