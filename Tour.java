@@ -11,6 +11,7 @@ public class Tour extends Piece{
         return "TOUR";
     }
     boolean deplacementValide(Position position) {
+        /* 
         if(move.horizontal(getPosition(),position)){
             if(move.vertical(getPosition(),position)){
                 return false;
@@ -24,6 +25,7 @@ public class Tour extends Piece{
                 return true;
             }
         }
+        */
         return false;
         
     };

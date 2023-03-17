@@ -11,7 +11,7 @@ public abstract class Piece {
     public abstract char getSymbole();
     abstract boolean deplacementValide(Position position);
     
-    public Piece(Position position, Couleur couleur, Plateau p) {
+    public Piece(Position position, Couleur couleur, Plateaux p) {
         this.position = position;
         this.couleur = couleur;
         this.plateau = p;
